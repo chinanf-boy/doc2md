@@ -1,4 +1,5 @@
 from __future__ import print_function
+from termcolor import cprint
 import re
 import sys
 import os
@@ -57,7 +58,14 @@ def main():
         lines = mkfileopen.readlines()
         mkfileopen.close()
     except Exception as identifier:
-        raise Exception('没有输入文件', identifier)
+        helpput = """useag:
+    $ doc2md2 file1 file2
+        file2.md is create markdown from file1.md
+        
+    $ doc2md2 file1
+        file1.md is create markdown from file1
+            """
+        return print(helpput)
 
     # 不需要改变，直接写入,开头匹配
     res = [r"``` py", r"更好的方法", r"#", r"```", r'---', '<!-- more -->']
@@ -151,14 +159,15 @@ def main():
         if write_file.find('md') <= 0:
             write_file = write_file + '.md'
 
-        print(write_file)
         file = open(write_file, 'w+')
         for i in match_value_s:
             file.write(i)
-
         file.close()
 
-        print('{} file is create markdown from {}'.format(write_file, Path))
+        output = "< {} >file is create markdown from < {} >".format(
+            write_file, Path)
+        cprint(output, 'green')
+
     except Exception as identifier:
         raise Exception(write_file, 'error', identifier)
 
