@@ -1,4 +1,4 @@
 .pypirc
-doc2md2.*
 build
 dist
+doc2md2.egg-info/*
