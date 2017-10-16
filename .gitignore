@@ -1,0 +1,4 @@
+.pypirc
+doc2md2.egg-info
+build
+dist

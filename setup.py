@@ -11,6 +11,15 @@ from shutil import rmtree
 
 from setuptools import setup, Command
 
+def long_description():
+    """Generate .rst document for PyPi."""
+    if args.doc:
+        import doc2md, pypandoc
+        md = doc2md.doc2md(doc2md.__doc__, "doc2md", toc=False)
+        long_description = pypandoc.convert(md, 'rst', format='md')
+    else:
+        return None
+
 # Package meta-data.
 NAME = 'doc2md2'
 DESCRIPTION = 'It does what it says it does.'
@@ -33,7 +42,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 # Import the README and use it as the long-description.
 # Note: this will only work if 'README.rst' is present in your MANIFEST.in file
-with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
+with io.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 
@@ -76,7 +85,7 @@ setup(
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
-    long_description=long_description,
+    long_description=long_description(),
     author=AUTHOR,
     author_email=EMAIL,
     url=URL,
