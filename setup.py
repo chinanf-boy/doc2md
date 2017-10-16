@@ -11,18 +11,9 @@ from shutil import rmtree
 
 from setuptools import setup, Command
 
-def long_description():
-    """Generate .rst document for PyPi."""
-    if args.doc:
-        import doc2md, pypandoc
-        md = doc2md.doc2md(doc2md.__doc__, "doc2md", toc=False)
-        long_description = pypandoc.convert(md, 'rst', format='md')
-    else:
-        return None
-
 # Package meta-data.
 NAME = 'doc2md2'
-DESCRIPTION = 'It does what it says it does.'
+DESCRIPTION = 'doc to markdown '
 URL = 'https://github.com/kennethreitz/background'
 EMAIL = 'yobrave86550129@yahoo.com'
 AUTHOR = 'yobrave'
