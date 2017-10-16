@@ -1,4 +1,5 @@
 README.md
+README.rst
 doc2md2.py
 setup.py
 doc2md2.egg-info/PKG-INFO
