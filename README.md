@@ -94,7 +94,7 @@ write_file = '../test_w.md'
 ## demo 就是
 
 ``` py
-python doc2md.py 
+python doc2md.py file1
 ```
 > 获取 ``让你的Python优雅.md``
 
