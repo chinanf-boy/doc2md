@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from doc2md2 import *
 
 # import path, sys
