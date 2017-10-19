@@ -1,6 +1,9 @@
 doc2md
 ======
 
+.. image:: https://travis-ci.org/chinanf-boy/doc2md.svg?branch=master
+    :target: https://travis-ci.org/chinanf-boy/doc2md
+    
 本意是为了
 
 像

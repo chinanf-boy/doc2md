@@ -1,5 +1,7 @@
 # doc2md
 
+[![Build Status](https://travis-ci.org/chinanf-boy/doc2md.svg?branch=master)](https://travis-ci.org/chinanf-boy/doc2md)
+
 本意是为了
 
 像
