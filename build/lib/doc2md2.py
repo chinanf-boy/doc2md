@@ -26,7 +26,7 @@ def is_zh(line):
     xx = u"([\u4e00-\u9fff]+)"
     pattern = re.compile(xx)
     results = pattern.findall(line)
-    return bool(results)
+    return bool(results) and (len(results[0]) == len(line))
 # 匹配中英文
 
 

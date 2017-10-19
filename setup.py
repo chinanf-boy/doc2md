@@ -17,7 +17,7 @@ DESCRIPTION = 'doc to markdown '
 URL = 'https://github.com/kennethreitz/background'
 EMAIL = 'yobrave86550129@yahoo.com'
 AUTHOR = 'yobrave'
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
@@ -66,7 +66,7 @@ class PublishCommand(Command):
             '{0} setup.py sdist bdist_wheel --universal'.format(sys.executable))
 
         self.status('Uploading the package to PyPi via Twine…')
-        os.system('twine upload --config-file ./.pypirc dist/* ')
+        os.system('twine upload dist/* ')
 
         sys.exit()
 
