@@ -2,3 +2,4 @@
 build
 dist
 doc2md2.egg-info/*
+.cache/*
