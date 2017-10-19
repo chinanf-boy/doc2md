@@ -27,6 +27,7 @@ def is_zh(line):
     xx = u"([\u4e00-\u9fff]+)"
     pattern = re.compile(xx)
     results = pattern.findall(line)
+    print(results)
     return bool(results) and (len(results[0]) == len(line))
 # 匹配中英文
 
@@ -73,6 +74,7 @@ def main():
     match_value_s = []
 
     for k, line in enumerate(lines):
+        line = line.decode('utf-8')
         for re_value in res:
             if line.isspace():
                 # \n 换行 直接 插入
